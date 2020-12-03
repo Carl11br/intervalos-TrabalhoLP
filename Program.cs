@@ -32,7 +32,7 @@ namespace IntervalosTrabalhoLP
             Console.WriteLine("Media da Uniao: " + u.Media().ToString());
             Console.WriteLine("União contém 3? "+u.Contem(3));
             Console.WriteLine("União contém 5? "+u.Contem(5));
-            Console.WriteLine("b contém -1? " + u.Contem(-1));
+            Console.WriteLine("u contém -1? " + u.Contem(-1));
             Console.ReadLine();
         }
     }
