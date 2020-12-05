@@ -11,29 +11,23 @@ namespace IntervalosTrabalhoLP
     {
         static void Main(string[] args)//Simples utilizações da classe Intervalo com objetivo de demonstração de suas funcionalidades
         {
-            Intervalo b = new Intervalo(false, -1, 1.3, true);
-            Console.Write("b= ");
-            b.Imprime();
-            Intervalo i = new Intervalo(true,5, 7, false);
-            Console.Write("i= ");
-            i.Imprime();
-            Intervalo p = b.Produto(i);
-            Console.Write("Produto de b com i: ");
-            p.Imprime();
-            Intervalo u = b.Uniao(i);
-            Console.Write("União de b com i: ");
-            u.Imprime();
-            Console.WriteLine("b intercepta i? " + b.Intercepta(i).ToString());
-            Console.WriteLine("i intercepta b? " + i.Intercepta(b).ToString());
-            Console.WriteLine("União intercepta b? " + u.Intercepta(b).ToString());
-            Console.WriteLine("União intercepta i? " + u.Intercepta(i).ToString());
-            Console.WriteLine("Media da i: "+i.Media().ToString());
-            Console.WriteLine("Media da b: " + b.Media().ToString());
-            Console.WriteLine("Media da Uniao: " + u.Media().ToString());
-            Console.WriteLine("União contém 3? "+u.Contem(3));
-            Console.WriteLine("União contém 5? "+u.Contem(5));
-            Console.WriteLine("u contém -1? " + u.Contem(-1));
+            Intervalo A = new Intervalo(true, 1, 4, true);
+            Intervalo B = new Intervalo(true, 4, 6, false);
+            Intervalo C = new Intervalo(false, 6, 10, false);
+            Intervalo AuB = A.Uniao(B);
+            Intervalo AuBuC = AuB.Uniao(C);
+            Intervalo AxB = A.Produto(B);
+            Console.Write("Intervalo A:"); A.Imprime();
+            Console.Write("Intervalo B:"); B.Imprime();
+            Console.Write("Intervalo C:"); C.Imprime();
+            Console.Write("Intervalo A U B:"); AuB.Imprime();
+            Console.Write("Intervalo (A U B) U C:"); AuBuC.Imprime();
+            Console.Write("Intervalo A x B:"); AxB.Imprime();
+            Console.WriteLine("Média do intervalo B: {0}", B.Media());
+            Console.WriteLine("O intervalo A intecepeta B? {0} ", A.Intercepta(B));
             Console.ReadLine();
+
+
         }
     }
 }
